@@ -1,4 +1,8 @@
 <div>
+    <div>
 
+        <a routerLink="/product/new">+</a>
+    
+    </div>
     <app-product-card *ngFor="let product of products" [product]="product"> {{product.name}} </app-product-card>
 </div>
