@@ -1,0 +1,9 @@
+div {
+    height: 100%;
+
+    /* Vertical Center */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+}

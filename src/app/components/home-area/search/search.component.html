@@ -1,0 +1,13 @@
+<div>
+    <!-- 1. Property binding -->
+    <label [title]="tooltip">Enter Text to search</label>
+
+    <!-- 3. Two-way Binding -->
+    <input type="search" [(ngModel)]="textToSearch" />
+
+    <!-- 2. Event binding -->
+    <button (click)="searchWebsite($event)">🔎</button>
+
+    <!-- 4. Interpolation -->
+    <span>Searching for {{textToSearch}}</span>
+</div>
