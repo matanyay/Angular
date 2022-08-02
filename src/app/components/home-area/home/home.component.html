@@ -1,0 +1,37 @@
+<div>
+    <!-- Data Bindings -->
+    <app-search class="box"></app-search>
+
+    <!-- Lifecycle Hooks -->
+    <app-clock class="box"></app-clock>
+
+    <!-- @Input -->
+    <app-slogan slogan="Hola mi amor"></app-slogan>
+    <app-slogan slogan="Healthy and cheap!"></app-slogan>
+
+    <app-tip>
+        Eat a <strong>healthy breakfast</strong>
+    </app-tip>
+
+    <app-tip>
+        <span class="subject">Weight Redaction</span>
+        Avoid eating after <strong>9:00 PM</strong>
+    </app-tip>
+
+    <app-survey (report)="display($event)"> How is our service quality?</app-survey>
+
+    <!-- Template Reference Variable -->
+    <app-location></app-location>
+
+    <!-- Pipe -->
+    <app-gift-card></app-gift-card>
+
+    <!-- Attribute Directive -->
+    <app-discount></app-discount>
+
+    <!-- Structural Directive -->
+    <app-sales></app-sales>
+
+    <app-random-sale></app-random-sale>
+
+</div>
