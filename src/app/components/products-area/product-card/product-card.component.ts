@@ -15,7 +15,7 @@ export class ProductCardComponent implements OnInit {
     public imageSource: string;
 
     ngOnInit(): void {
-        this.imageSource = environment.productsUrl + "/images/" + this.product.imageName;
+        this.imageSource = environment.productsUrl + "images/" + this.product.imageName;
     }
 
 }
