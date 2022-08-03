@@ -1,13 +1,22 @@
-<div *ngIf="product" class="box">
+<div *ngIf="product">
     <div>
         {{product.name}} <br>
         Price: {{ product.price | currency}} <br>
         Stock: {{ product.stock }}
     </div>
     <div>
-        <a routerLink="/products">
             <img [src]="imageSource" />
-        </a>
     </div>
+
+    <br>
+
+    <a routerLink="/products">Back</a>
+    <span> | </span>
+
+    <a routerLink="/products/edit/{{product.id}}">Edit</a>
+
+    <span> | </span>
+
+    <a href="javascript:void(0)" (click)="deleteProduct()">Delete</a>
 
 </div>

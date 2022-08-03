@@ -6,6 +6,7 @@ import { GiftShopComponent } from './components/gift-shop-area/gift-shop/gift-sh
 import { HomeComponent } from './components/home-area/home/home.component';
 import { PageNotFoundComponent } from './components/layout-area/page-not-found/page-not-found.component';
 import { AddProductComponent } from './components/products-area/add-product/add-product.component';
+import { EditProductComponent } from './components/products-area/edit-product/edit-product.component';
 import { ProductDetailsComponent } from './components/products-area/product-details/product-details.component';
 import { ProductsListComponent } from './components/products-area/products-list/products-list.component';
 import { SellersComponent } from './components/sellers-area/sellers/sellers.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
     { path: "products", component: ProductsListComponent },
     { path: "product/new", component: AddProductComponent },
     { path: "products/details/:productId", component: ProductDetailsComponent },
+    { path: "products/edit/:productId", component: EditProductComponent },
     { path: "gift-shop", component: GiftShopComponent },
     { path: "sellers", component: SellersComponent },
     { path: "about", component: AboutComponent },

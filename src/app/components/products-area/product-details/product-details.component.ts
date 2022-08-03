@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { async } from '@angular/core/testing';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductModel } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { environment } from 'src/environments/environment';
@@ -13,11 +14,11 @@ export class ProductDetailsComponent implements OnInit {
 
 
 
-    public product: ProductModel=new ProductModel();
+    public product: ProductModel = new ProductModel();
     public imageSource: string;
 
 
-    constructor(private activatedRoute: ActivatedRoute,private productsService: ProductsService) { }
+    constructor(private activatedRoute: ActivatedRoute, private productsService: ProductsService, private router: Router) { }
 
     async ngOnInit() {
         try {
@@ -27,6 +28,16 @@ export class ProductDetailsComponent implements OnInit {
 
         } catch (err: any) {
 
+        }
+    }
+
+    async deleteProduct() {
+        try {
+            await this.productsService.deleteProduct(this.product.id);
+            alert("Product has been delete")
+            this.router.navigate(["/products"])
+        } catch (error) {
+            
         }
     }
 
