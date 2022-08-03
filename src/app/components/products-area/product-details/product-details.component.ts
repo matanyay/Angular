@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductModel } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products/products.service';
@@ -11,20 +11,15 @@ import { environment } from 'src/environments/environment';
 })
 export class ProductDetailsComponent implements OnInit {
 
-    public product: ProductModel={
-         id: 0,
-         name: "",
-         price: 0,
-         stock: 0,
-         imageName: ""
-    };
+
+
+    public product: ProductModel=new ProductModel();
     public imageSource: string;
 
 
     constructor(private activatedRoute: ActivatedRoute,private productsService: ProductsService) { }
 
     async ngOnInit() {
-        // snapshot = current url
         try {
             const id = +this.activatedRoute.snapshot.params["productId"];
             this.product = await this.productsService.getOneProduct(id);

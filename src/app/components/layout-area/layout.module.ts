@@ -25,7 +25,6 @@ import { ProductsModule } from '../products-area/products.module';
     HomeModule,
     AboutModule,
     AppRoutingModule,
-    ProductsModule
   ]
 })
 export class LayoutModule { }
