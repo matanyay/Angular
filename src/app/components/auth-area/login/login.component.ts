@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CredentialModel } from 'src/app/models/credintial.model';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { NotifyService } from 'src/app/services/notify/notify.service';
 
 @Component({
     selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
     public credential = new CredentialModel();
 
-    constructor(private authService: AuthService, private router: Router) { }
+    constructor(private authService: AuthService, private router: Router, private notifyService: NotifyService) { }
 
     ngOnInit(): void {
     }
@@ -20,10 +21,11 @@ export class LoginComponent implements OnInit {
     public async send() {
         try {
             await this.authService.login(this.credential)
-            alert('welcome back')
+            this.notifyService.success("welcome back")
             this.router.navigateByUrl("/home")
         } catch (err: any) {
-            alert(err.message)
+            this.notifyService.error("error login")
+
         }
 
     }

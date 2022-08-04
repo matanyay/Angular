@@ -15,8 +15,8 @@
 
     <a routerLink="/products/edit/{{product.id}}">Edit</a>
 
-    <span> | </span>
+    <span *ngIf="isLoggedIn"> | </span>
 
-    <a href="javascript:void(0)" (click)="deleteProduct()">Delete</a>
+    <a href="javascript:void(0)" (click)="deleteProduct() " *ngIf="isLoggedIn">Delete</a>
 
 </div>

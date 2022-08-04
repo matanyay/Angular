@@ -12,16 +12,20 @@ import { AddProductComponent } from './components/products-area/add-product/add-
 import { EditProductComponent } from './components/products-area/edit-product/edit-product.component';
 import { ProductDetailsComponent } from './components/products-area/product-details/product-details.component';
 import { ProductsListComponent } from './components/products-area/products-list/products-list.component';
-import { SellersComponent } from './components/sellers-area/sellers/sellers.component';
+import { AuthGuard } from './services/auth/auth.guard';
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
     { path: "products", component: ProductsListComponent },
-    { path: "product/new", component: AddProductComponent },
+    { path: "product/new", component: AddProductComponent, canActivate: [AuthGuard] },
     { path: "products/details/:productId", component: ProductDetailsComponent },
-    { path: "products/edit/:productId", component: EditProductComponent },
+    { path: "products/edit/:productId", component: EditProductComponent, canActivate: [AuthGuard] },
     { path: "gift-shop", component: GiftShopComponent },
-    { path: "sellers", component: SellersComponent },
+    {
+        path: "sellers", loadChildren: () =>
+            import("./components/sellers-area/sellers.module").then(m => m.SellersModule)
+
+    },
     { path: "about", component: AboutComponent },
     { path: "contact-us", component: ContactUsComponent },
     { path: "register", component: RegisterComponent },
