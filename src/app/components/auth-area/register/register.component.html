@@ -1,0 +1,22 @@
+<div class="box">
+
+    <form>
+
+
+        <h2>Register</h2>
+        <label >First Name</label>
+        <input type="text" name="firstName" [(ngModel)]="user.firstName">
+
+        <label >Last Name</label>        
+        <input type="text" name="lastName" [(ngModel)]="user.lastName">
+        
+        <label >username</label>
+        <input type="text" name="username" [(ngModel)]="user.username">
+
+        <label >password</label>
+        <input type="text" name="password" [(ngModel)]="user.password">
+
+        <button (click)="send()">Register</button>
+    </form>
+
+</div>

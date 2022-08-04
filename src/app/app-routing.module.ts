@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about-area/about/about.component';
+import { RegisterComponent } from './components/auth-area/register/register.component';
 import { ContactUsComponent } from './components/contact-us-area/contact-us/contact-us.component';
 import { GiftShopComponent } from './components/gift-shop-area/gift-shop/gift-shop.component';
 import { HomeComponent } from './components/home-area/home/home.component';
@@ -21,6 +22,9 @@ const routes: Routes = [
     { path: "sellers", component: SellersComponent },
     { path: "about", component: AboutComponent },
     { path: "contact-us", component: ContactUsComponent },
+    { path: "register", component: RegisterComponent },
+
+
     { path: "", redirectTo: "home", pathMatch: "full" },
     { path: "**", component: PageNotFoundComponent },
 

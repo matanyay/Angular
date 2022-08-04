@@ -9,6 +9,7 @@ import { AboutModule } from '../about-area/about.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductsModule } from '../products-area/products.module';
+import { AuthModule } from '../auth-area/auth.module';
 
 //ng g m components/layout-area/layout --flat
 
@@ -25,7 +26,8 @@ import { ProductsModule } from '../products-area/products.module';
     HomeModule,
     AboutModule,
     AppRoutingModule,
-    ProductsModule
+    ProductsModule,
+    AuthModule
 
   ]
 })
