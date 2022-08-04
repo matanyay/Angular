@@ -1,6 +1,6 @@
 <div class="box">
 
-    <form>
+    <form (ngSubmit)="send()">
 
 
         <h2>Register</h2>
@@ -16,7 +16,7 @@
         <label >password</label>
         <input type="text" name="password" [(ngModel)]="user.password">
 
-        <button (click)="send()">Register</button>
+        <button >Register</button>
     </form>
 
 </div>
